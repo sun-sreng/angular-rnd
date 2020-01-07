@@ -1,0 +1,30 @@
+<div>
+  <label id="example-radio-group-label">Pick your favorite season</label>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [formControl]="radioControl"
+  >
+    <mat-radio-button
+      class="example-radio-button"
+      *ngFor="let season of seasons"
+      [value]="season"
+    >
+      {{ season }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <div>Your favorite season is: {{ radioControl.value }}</div>
+</div>
+
+<div>
+  <h4>Basic mat-select</h4>
+  <mat-form-field>
+    <mat-label>Favorite food</mat-label>
+    <mat-select [formControl]="selectControl">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div>Your favorite season is: {{ selectControl.value }}</div>
+</div>

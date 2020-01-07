@@ -1,0 +1,18 @@
+<mat-form-field appearance="outline">
+  <mat-label>Outline form field</mat-label>
+  <input
+    matInput
+    type="number"
+    min="5"
+    max="25"
+    step="5"
+    placeholder="Placeholder"
+    [formControl]="control"
+  />
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-hint>{{ control.value }}</mat-hint>
+</mat-form-field>
+<button mat-button (click)="resetHistory()">Reset History</button>
+<ul>
+  <li *ngFor="let h of history">{{ h }}</li>
+</ul>

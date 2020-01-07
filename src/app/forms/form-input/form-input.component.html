@@ -1,0 +1,17 @@
+<!-- <form class="example-form"> -->
+<mat-form-field appearance="outline">
+  <mat-label>Outline form field</mat-label>
+  <input matInput placeholder="Placeholder" [formControl]="control" />
+  <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+  <mat-hint>{{ control.value }}</mat-hint>
+</mat-form-field>
+<button mat-button (click)="setFormControl()">setFormControl</button>
+<button mat-button (click)="toggleFormEnable()">
+  {{ control.enabled ? "Disable" : "Enable" }}
+</button>
+
+<ul>
+  <li *ngFor="let h of history">{{ h }}</li>
+</ul>
+<button mat-button (click)="clearHistory()">Clear History</button>
+<!-- </form> -->
